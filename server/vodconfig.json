@@ -1,0 +1,5 @@
+{
+  "recordDir"       : "/mnt/s3",
+  "fileExtension"       : ".mp4",
+  "scanInterval"       : 200
+}

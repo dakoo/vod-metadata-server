@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+  <script src="controllers/vod.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+</head>
+  <body>
+    <div class="navbar navbar-inverse">
+      <a class="navbar-brand" href="#">Remote Reality VoD</a>
+    </div>
+    <div ng-app="vodApp" ng-controller="vodCtrl" class="panel panel-default row">
+      <div class="well ng-scope" ng-repeat="item in streams">
+        <h3>
+          <strong>{{item.title}}</strong>
+      <a href={{item.videoUrl}}>
+          	<img src={{item.thumbnailUrl}} class="img-thumbnail" alt="thumbnail" width="304" height="236">
+          </a>
+          <span class="pull-right label label-primary">{{item.creationDate}}</span>
+          <span class="pull-right label label-primary">{{item.videoUrl}}</span>          
+          <span class="pull-left label label-info">{{item.thumbnailUrl}}</span>
+        </h3>
+<div>
+      <a href={{item.videoUrl}}>
+	View on Android</a>
+</div>
+      </div>
+    </div>  
+  </body>
+</html>

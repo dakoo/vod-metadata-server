@@ -1,0 +1,7 @@
+{
+  "API": {
+    "port": "80",
+    "labels": ["api"],
+    "routes": {"cors": true}
+  }
+}

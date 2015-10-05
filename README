@@ -1,0 +1,69 @@
+1. Installation
+
+1) install mongodb
+
+$sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+$echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+$sudo apt-get update
+$sudo apt-get install mongodb-org
+
+2) config mongodb
+
+$mongo
+>use vod-meta-db
+switched to db vod-meta-db
+>var tx = {}
+>db.streams.insert(tx);
+WriteResult({"nInserted":1})
+>show collections
+system.indexes
+streams
+>db.users.remove({});
+WriteResult({"nRemoved":1})
+
+3) Install and config the project
+
+$git clone http://192.168.11.22/darkblue/vod-metadata-server.git
+$cd vod-metadata-server
+$cd server
+$npm install
+
+4) Install utilities 
+
+$ npm install -g nodemon
+
+2. API test
+
+1) Install mocha globally
+
+$ npm install -g mocha
+
+2) Install chai, chai-http in 'test' folder
+
+$ npm install
+
+3) Test the API in the project root folder
+
+$ mocha
+
+2. run
+
+If you use nodemon instead of node, do the following command in the project root folder
+
+$nodemon . 
+
+Otherwise
+
+$node .
+
+3. Client 
+
+1) Go to the /root/client
+
+2) $npm install 
+
+3) Make sure nodemon is running (nodemon . in the 'root/server' folder)
+
+4) Open a brower and surf 'localhost:3001'
+
+
